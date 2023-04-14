@@ -25,6 +25,7 @@ python hi-STM.py -ann data/zeolite/ann/an00029.png -img data/zeolite/ann/00029.p
 - `-ann` directs to the file with the annotations
 - `-img` is the image of the annotated slice
 - `-vol`refers to the folder with images to segment
+
 The output `test` and `viz` are at the same level as `-vol`.
 
 ##### Annotations

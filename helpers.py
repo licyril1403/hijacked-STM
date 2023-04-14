@@ -11,7 +11,6 @@ import torch.utils.model_zoo as model_zoo
 from torchvision import models
 
 # general libs
-import cv2
 import matplotlib.pyplot as plt
 from PIL import Image
 import numpy as np
@@ -53,7 +52,6 @@ def pad_divide_by(in_list, d, in_size):
 
 def overlay_davis(image,mask,colors=[[0,0,0], [255,0,0], [0,0,255]],cscale=2,alpha=0.4):
     """ Overlay segmentation on top of RGB image. from davis official"""
-    # import skimage
     from scipy.ndimage.morphology import binary_erosion, binary_dilation
 
     colors = np.reshape(colors, (-1, 3))
@@ -70,9 +68,7 @@ def overlay_davis(image,mask,colors=[[0,0,0], [255,0,0], [0,0,255]],cscale=2,alp
         # Compose image
         im_overlay[binary_mask] = foreground[binary_mask]
 
-        # countours = skimage.morphology.binary.binary_dilation(binary_mask) - binary_mask
         countours = binary_dilation(binary_mask) ^ binary_mask
-        # countours = cv2.dilate(binary_mask, cv2.getStructuringElement(cv2.MORPH_CROSS,(3,3))) - binary_mask
         im_overlay[countours,:] = 0
 
     return im_overlay.astype(image.dtype)

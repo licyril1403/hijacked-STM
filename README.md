@@ -7,7 +7,7 @@ The paper will be available at a later date.
 ### Requirements
 - python 3.6
 - pytorch 1.0.1.post2
-- numpy, opencv, pillow
+- numpy, pillow
 
 ### How to Use
 #### Download weights

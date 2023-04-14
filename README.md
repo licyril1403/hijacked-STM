@@ -37,7 +37,7 @@ The output `test` and `viz` are at the same level as `-vol`.
 
 
 ##### Other parameters
-- `-F` put the pseudo label of the annotation slice in the memory (more details in our paper)
+- `-F` puts the pseudo label of the annotation slice in the memory (more details in our paper)
 - `-STM` runs with the original [STM network](https://github.com/seoungwugoh/STM)
 
 
